@@ -3,7 +3,7 @@
 
 name: tippable
 
-description: tippable, a quick fly-in, fly-out tooltip
+description: tippable, a quick fly-in, fly-out tooltip for mootols 1.3
 
 author: Dimitar Christoff
 
@@ -157,33 +157,3 @@ this.tippable = new Class({
     } // end hideTip
 
 }); // end tippable class
-
-var tippables = document.getElements("div.tippable");
-
-if (!window.console)
-    console = {
-        log: function() {
-
-        }
-    };
-
-tippables.each(function(el, index) {
-    new tippable(el, {
-        title: "coda was here",
-        text: "tooltip "+ index,
-        onBeforeShow: function() {
-            console.log("about to show tip");
-        },
-        onShow: function() {
-            console.log("tip showing now");
-        },
-        onBeforeHide: function() {
-            console.log("tip about to hide");
-        },
-        onHide: function() {
-            console.log("tip hidden");
-        }
-
-    });
-});
-
