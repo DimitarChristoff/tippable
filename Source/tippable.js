@@ -119,7 +119,10 @@ this.tippable = new Class({
      
     attachEvents: function() {
         // private
-        this.boundEvents = {mouseenter: this.showTip.bind(this), mouseleave: this.hideTip.bind(this)};
+        this.boundEvents = {
+            mouseenter: this.showTip.bind(this), 
+            mouseleave: this.hideTip.bind(this)
+        };
         this.element.addEvents(this.boundEvents);
         return this;
     },
