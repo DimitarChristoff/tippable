@@ -9,7 +9,7 @@ author: Dimitar Christoff
 
 license: MIT-style license.
 
-version: 0.95
+version: 0.96
 
 requires:
   - Core/String
@@ -119,16 +119,13 @@ this.tippable = new Class({
      
     attachEvents: function() {
         // private
-        this.element.addEvents({
-            mouseenter: this.boundEnter = this.showTip.bind(this),
-            mouseleave: this.boundLeave = this.hideTip.bind(this)
-        });
+        this.boundEvents = {mouseenter: this.showTip.bind(this), mouseleave: this.hideTip.bind(this)};
+        this.element.addEvents(this.boundEvents);
         return this;
     },
     
     detatchEvents: function() {
-        this.element.removeEvent("mouseenter", this.boundEnter);
-        this.element.removeEvent("mouseleave", this.boundLeave);
+        this.element.removeEvents(this.boundEvents);
         return this;
     },
     
