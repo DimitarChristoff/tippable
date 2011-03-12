@@ -108,11 +108,13 @@ this.tippable = new Class({
         if (what.length) {
             this.title.set("html", what);
         }
+        return this;
     },
      
     setHTML: function(what) {
         // set body content public api
         this.body.set("html", what);
+        return this;
     },
      
     attachEvents: function() {
@@ -121,11 +123,13 @@ this.tippable = new Class({
             mouseenter: this.boundEnter = this.showTip.bind(this),
             mouseleave: this.boundLeave = this.hideTip.bind(this)
         });
+        return this;
     },
     
     detatchEvents: function() {
         this.element.removeEvent("mouseenter", this.boundEnter);
         this.element.removeEvent("mouseleave", this.boundLeave);
+        return this;
     },
     
     showTip: function() {
@@ -142,7 +146,7 @@ this.tippable = new Class({
             marginTop: [-this.options.topOffsetStart, -this.options.topOffset],
             opacity: [0, 1]
         });
-        
+        return this;
     }, // end showTip
     
     hideTip: function() {
@@ -159,7 +163,7 @@ this.tippable = new Class({
             marginTop: -this.options.topOffsetStart,
             opacity: [1, 0]
         });
-        
+        return this;
     } // end hideTip
     
 }); // end tippable class
