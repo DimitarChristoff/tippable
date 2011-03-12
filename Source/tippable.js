@@ -85,7 +85,7 @@ this.tippable = new Class({
         this.tip.inject(this.element, "top");
 
         // store instance into the tip element for event use!
-        this.tip.store("tippable", this);
+        this.element.store("tippable", this);
 
         // set initial title and body values
         this.setTitle(this.options.title);
